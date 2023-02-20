@@ -1,0 +1,90 @@
+<!-- <h2>Selection-List with secondary action:</h2>
+
+<mat-selection-list>
+  <mat-list-option *ngFor="let item of groupItems;" [value]="item.id" [disableRipple]="true">
+    <div style="display:flex; justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center">
+        <mat-icon matListAvatar>person</mat-icon>
+
+        <div style="display:flex; flex-direction:column">
+          <div>
+            <h3 matLine> {{item.name}}</h3>
+          </div>
+          <div>
+            <p matLine>
+              {{item.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-icon-button (click)="onEdit($event, item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-list-option>
+</mat-selection-list> -->
+
+<h2>Todo Items</h2>
+
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+
+<!-- <mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel [expanded]="isExpanded(group.id)" *ngFor="let group of groupItems">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{group.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Completed Items: {{groupitems.selectedOptions.selected.length}} of {{group.items.length}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-selection-list #groupitems>
+      <mat-list-option [selected]="item.selected" *ngFor="let item of group.items">
+        {{item.text}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>
+</mat-accordion> -->
+
+
+      <!-- <mat-selection-list #groupitems>
+        <mat-list-option [selected]="item.selected" *ngFor="let item of group.items">
+          {{item.text}}
+        </mat-list-option>
+      </mat-selection-list> -->
+<mat-list>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="isExpanded(group.id)" *ngFor="let group of groupItems">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{group.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- Completed Items: {{groupitems.selectedOptions.selected.length}} of {{group.items.length}} -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-list-item *ngFor="let item of group.items">
+        <mat-checkbox [checked]="item.selected" matListItemTitle>{{item.text}}</mat-checkbox>
+        <button mat-raised-button color="primary">Basic</button>
+        <!-- <div class="example-flex-container">
+          <button mat-icon-button color="primary" aria-label="Example icon button with a plus one icon">
+            <mat-icon>add_comment</mat-icon>
+          </button>
+        </div>  -->
+        <!-- <mat-icon matListItemIcon>folder</mat-icon> -->
+        <!-- <div matListItemTitle>{{item.text}}</div>
+        <div matListItemLine>{{item.selected}}</div> -->
+      </mat-list-item>
+    </mat-expansion-panel>
+  </mat-accordion>
+   
+</mat-list>
+
+
