@@ -102,3 +102,7 @@
   .active-icon {
     color: red;
   }
+
+.main {
+  margin: 10px;
+}
